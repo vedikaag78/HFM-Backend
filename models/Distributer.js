@@ -27,17 +27,13 @@ var addressSchema = new Schema({
     timestamps: true
 });
 
-var foodDetailSchema = new Schema({
-    donor_name:{
-        name: String,
+var distributorSchema = new Schema({
+    name :{
+        type: String,
         required: true
     },
-    food_name : {
-        name: String,
-        required: true
-    },
-    quantity:{
-        name: Number,
+    number:{
+        type: String,
         required: true
     },
     address: [addressSchema]
@@ -45,5 +41,5 @@ var foodDetailSchema = new Schema({
     timestamps: true
 });
 
-var foodDetails = mongoose.model('foodDetail', foodDetailSchema);
-module.exports = foodDetails; 
+var distributors = mongoose.model('distributor', distributorSchema);
+module.exports = distributors; 
